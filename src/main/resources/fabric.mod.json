@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "simplegravestones",
+  "version": "${version}",
+  "name": "Simple Gravestones",
+  "description": "This mod adds a gravestones after a death.",
+  "authors": [
+    "MrCreativ3001"
+  ],
+  "contact": {
+    "homepage": "https://example.com/",
+    "issues": "https://example.com/",
+    "sources": "https://example.com/"
+  },
+  "license": "The Unlicense",
+  "icon": "assets/simplegravestones/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "de.mrcreativ3001.simplegravestones.SimpleGravestones"
+      }
+    ]
+  },
+  "mixins": [
+    "mod_id.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabricloader}",
+    "fabric-api": ">=${fabric_api}",
+    "fabric-language-kotlin": ">=${fabric_language_kotlin}",
+    "minecraft": ">=${minecraft}",
+    "java": ">=${java}"
+  }
+}
