@@ -24,7 +24,7 @@
     ]
   },
   "mixins": [
-    "mod_id.mixins.json"
+    "simplegravestones.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${fabricloader}",
