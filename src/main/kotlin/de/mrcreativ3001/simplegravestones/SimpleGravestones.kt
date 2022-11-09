@@ -21,8 +21,15 @@ import java.lang.RuntimeException
 object SimpleGravestones: ModInitializer {
     private const val MOD_ID = "simplegravestones"
 
+    // TODO:
+    // Add back command
+    // Add config option for back command
+    // Add block checking for the grave!
+
     override fun onInitialize() {
-        
+        CommandRegistrationCallback.EVENT.register { dispatcher, _, _ ->
+            BackCommand.register(dispatcher)
+        }
     }
 
     /**

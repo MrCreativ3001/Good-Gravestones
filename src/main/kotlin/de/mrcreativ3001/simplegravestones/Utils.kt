@@ -62,6 +62,10 @@ fun LockableContainerBlockEntity.insertItem(slot: Int, item: ItemStack): ItemSta
     return item
 }
 
+fun World.isSolid(pos: BlockPos): Boolean {
+    return this.getBlockState(pos).isSolidBlock(this, pos)
+}
+
 fun LivingEntity.dropXp() {
     (this as LivingEntityAccessor).invokeDropXp()
 }
