@@ -1,7 +1,13 @@
 package de.mrcreativ3001.simplegravestones.util
 
+import de.mrcreativ3001.simplegravestones.mixins.LivingEntityAccessor
+import de.mrcreativ3001.simplegravestones.mixins.PlayerEntityAccessor
 import net.minecraft.block.entity.LockableContainerBlockEntity
+import net.minecraft.entity.LivingEntity
+import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemStack
+import net.minecraft.util.math.BlockPos
+import net.minecraft.world.World
 
 /**
  * Inserts the items into the chest.
@@ -54,4 +60,12 @@ fun LockableContainerBlockEntity.insertItem(slot: Int, item: ItemStack): ItemSta
     this.setStack(slot, containerItem)
 
     return item
+}
+
+fun LivingEntity.dropXp() {
+    (this as LivingEntityAccessor).invokeDropXp()
+}
+
+fun PlayerEntity.vanishCursedItems() {
+    (this as PlayerEntityAccessor).invokeVanishCursedItems()
 }
