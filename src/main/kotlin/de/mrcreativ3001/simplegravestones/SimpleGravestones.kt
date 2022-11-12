@@ -1,5 +1,6 @@
 package de.mrcreativ3001.simplegravestones
 import de.mrcreativ3001.simplegravestones.command.BackCommand
+import de.mrcreativ3001.simplegravestones.config.ModConfig
 import de.mrcreativ3001.simplegravestones.util.dropXp
 import de.mrcreativ3001.simplegravestones.util.insertItem
 import de.mrcreativ3001.simplegravestones.util.vanishCursedItems
@@ -19,7 +20,7 @@ import java.lang.RuntimeException
 
 @Suppress("UNUSED")
 object SimpleGravestones: ModInitializer {
-    private const val MOD_ID = "simplegravestones"
+    const val MOD_ID = "simplegravestones"
 
     // TODO:
     // Add back command
@@ -30,6 +31,7 @@ object SimpleGravestones: ModInitializer {
         CommandRegistrationCallback.EVENT.register { dispatcher, _, _ ->
             BackCommand.register(dispatcher)
         }
+        
     }
 
     /**
