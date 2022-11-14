@@ -10,6 +10,7 @@ group = project.extra["maven_group"] as String
 repositories {}
 
 dependencies {
+    // Minecraft, Fabric and Kotlin Dependencies
     minecraft("com.mojang", "minecraft", project.extra["minecraft_version"] as String)
     mappings("net.fabricmc", "yarn", project.extra["yarn_mappings"] as String, null, "v2")
     modImplementation("net.fabricmc", "fabric-loader", project.extra["loader_version"] as String)
