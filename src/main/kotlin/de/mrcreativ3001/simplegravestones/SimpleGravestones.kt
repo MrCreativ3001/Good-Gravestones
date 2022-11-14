@@ -1,6 +1,5 @@
 package de.mrcreativ3001.simplegravestones
 import de.mrcreativ3001.simplegravestones.command.BackCommand
-import de.mrcreativ3001.simplegravestones.config.ModConfig
 import de.mrcreativ3001.simplegravestones.util.dropXp
 import de.mrcreativ3001.simplegravestones.util.insertItem
 import de.mrcreativ3001.simplegravestones.util.vanishCursedItems
