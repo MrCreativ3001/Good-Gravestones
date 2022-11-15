@@ -1,8 +1,10 @@
 package de.mrcreativ3001.simplegravestones
 import de.mrcreativ3001.simplegravestones.command.BackCommand
+import de.mrcreativ3001.simplegravestones.config.SimpleGravestonesConfig
 import de.mrcreativ3001.simplegravestones.util.dropXp
 import de.mrcreativ3001.simplegravestones.util.insertItem
 import de.mrcreativ3001.simplegravestones.util.vanishCursedItems
+import eu.midnightdust.lib.config.MidnightConfig
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback
 import net.minecraft.block.Blocks
@@ -21,16 +23,11 @@ import java.lang.RuntimeException
 object SimpleGravestones: ModInitializer {
     const val MOD_ID = "simplegravestones"
 
-    // TODO:
-    // Add back command
-    // Add config option for back command
-    // Add block checking for the grave!
-
     override fun onInitialize() {
+        MidnightConfig.init(MOD_ID, SimpleGravestonesConfig::class.java)
         CommandRegistrationCallback.EVENT.register { dispatcher, _, _ ->
             BackCommand.register(dispatcher)
         }
-        
     }
 
     /**

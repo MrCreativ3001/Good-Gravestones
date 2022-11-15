@@ -7,7 +7,16 @@ base { archivesName.set(project.extra["archives_base_name"] as String) }
 version = project.extra["mod_version"] as String
 group = project.extra["maven_group"] as String
 
-repositories {}
+repositories {
+    // MidnightLib
+    maven {
+        url = uri("https://api.modrinth.com/maven")
+    }
+    // Mod Menu
+    maven {
+        url = uri("https://maven.terraformersmc.com/releases")
+    }
+}
 
 dependencies {
     // Minecraft, Fabric and Kotlin Dependencies
@@ -16,6 +25,11 @@ dependencies {
     modImplementation("net.fabricmc", "fabric-loader", project.extra["loader_version"] as String)
     modImplementation("net.fabricmc.fabric-api", "fabric-api", project.extra["fabric_version"] as String)
     modImplementation("net.fabricmc", "fabric-language-kotlin", project.extra["fabric_language_kotlin_version"] as String)
+    // MidnightLib: https://github.com/TeamMidnightDust/MidnightLib/tree/architectury
+    modImplementation("maven.modrinth:midnightlib:${project.extra["midnightlib_version"]}")
+    include("maven.modrinth:midnightlib:${project.extra["midnightlib_version"]}")
+    // Mod Menu: https://github.com/TerraformersMC/ModMenu
+    modImplementation("com.terraformersmc:modmenu:${rootProject.extra["mod_menu_version"]}")
 }
 
 tasks {
