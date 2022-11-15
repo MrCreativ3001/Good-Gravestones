@@ -2,6 +2,7 @@ package de.mrcreativ3001.simplegravestones.command
 
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.context.CommandContext
+import de.mrcreativ3001.simplegravestones.config.SimpleGravestonesConfig
 import de.mrcreativ3001.simplegravestones.util.isSolid
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.server.command.CommandManager.*
@@ -21,6 +22,11 @@ object BackCommand {
         val entity = ctx.source.entity!!
         if (entity !is PlayerEntity) {
             entity.sendMessage(Text.literal("Only a player can go back to their death position"))
+            return 0
+        }
+
+        if(!SimpleGravestonesConfig.enableBackCommand) {
+            entity.sendMessage(Text.literal("This command has been disabled in the config"))
             return 0
         }
 

@@ -21,6 +21,12 @@
         "adapter": "kotlin",
         "value": "de.mrcreativ3001.simplegravestones.SimpleGravestones"
       }
+    ],
+    "modmenu": [
+      {
+        "adapter": "kotlin",
+        "value": "de.mrcreativ3001.simplegravestones.config.SimpleGravestonesModMenuApi"
+      }
     ]
   },
   "mixins": [
