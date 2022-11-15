@@ -1,4 +1,9 @@
 {
   "simplegravestones.midnightconfig.title":  "Simple Gravestones Config",
-  "simplegravestones.midnightconfig.enableBackCommand": "Enable Back Command"
+  "simplegravestones.midnightconfig.enableBackCommand": "Enable Back Command",
+
+  "command.simplegravestones.back.disabled": "This command was disabled",
+  "command.simplegravestones.back.notfound.deathpos": "No death position was found",
+  "command.simplegravestones.back.obstructed": "Your last death position is obstructed",
+  "command.simplegravestones.back.success": "You were teleported to your last death position"
 }

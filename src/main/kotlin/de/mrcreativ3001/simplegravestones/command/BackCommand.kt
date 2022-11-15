@@ -2,6 +2,7 @@ package de.mrcreativ3001.simplegravestones.command
 
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.context.CommandContext
+import de.mrcreativ3001.simplegravestones.SimpleGravestones
 import de.mrcreativ3001.simplegravestones.config.SimpleGravestonesConfig
 import de.mrcreativ3001.simplegravestones.util.isSolid
 import net.minecraft.entity.player.PlayerEntity
@@ -21,30 +22,30 @@ object BackCommand {
     private fun execute(ctx: CommandContext<ServerCommandSource>): Int {
         val entity = ctx.source.entity!!
         if (entity !is PlayerEntity) {
-            entity.sendMessage(Text.literal("Only a player can go back to their death position"))
+            entity.sendMessage(Text.translatable("permissions.requires.player"))
             return 0
         }
 
         if(!SimpleGravestonesConfig.enableBackCommand) {
-            entity.sendMessage(Text.literal("This command has been disabled in the config"))
+            entity.sendMessage(Text.translatable("command.${SimpleGravestones.MOD_ID}.back.disabled"))
             return 0
         }
 
         val deathPos = entity.lastDeathPos.map(GlobalPos::getPos).orElse(null)
         if (deathPos == null) {
-            entity.sendMessage(Text.literal("No death position was found"))
+            entity.sendMessage(Text.translatable("command.${SimpleGravestones.MOD_ID}.back.notfound.deathpos"))
             return 0
         }
 
         val teleportPos = findTeleportSpot(entity.world, deathPos)
 
         if (teleportPos == null) {
-            entity.sendMessage(Text.literal("Your last death position is obstructed or has no ground"))
+            entity.sendMessage(Text.translatable("command.${SimpleGravestones.MOD_ID}.back.obstructed"))
             return 0
         }
 
         entity.teleport(teleportPos.x.toDouble()+0.5, teleportPos.y.toDouble(), teleportPos.z.toDouble()+0.5)
-        entity.sendMessage(Text.literal("You were teleported to your last death position"))
+        entity.sendMessage(Text.translatable("command.${SimpleGravestones.MOD_ID}.back.success"))
 
         return 1
     }
