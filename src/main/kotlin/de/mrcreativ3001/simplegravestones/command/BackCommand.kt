@@ -40,7 +40,7 @@ object BackCommand {
         val teleportPos = findTeleportSpot(entity.world, deathPos)
 
         if (teleportPos == null) {
-            entity.sendMessage(Text.translatable("command.${SimpleGravestones.MOD_ID}.back.obstructed"))
+            entity.sendMessage(Text.translatable("command.${SimpleGravestones.MOD_ID}.back.obstructed", deathPos.x, deathPos.y, deathPos.z))
             return 0
         }
 
