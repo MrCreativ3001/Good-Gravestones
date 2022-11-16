@@ -35,6 +35,7 @@ object SimpleGravestones: ModInitializer {
      * @return
      * Returns if the grave was spawned.
      */
+    @JvmStatic
     fun spawnGrave(player: PlayerEntity): Boolean {
         player.dropXp()
 
