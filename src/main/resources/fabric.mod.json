@@ -13,7 +13,7 @@
     "sources": "https://example.com/"
   },
   "license": "The Unlicense",
-  "icon": "assets/simplegravestones/icon.png",
+  "icon": "assets/simplegravestones/logo.jpg",
   "environment": "*",
   "entrypoints": {
     "main": [
