@@ -1,6 +1,6 @@
-package de.mrcreativ3001.simplegravestones.mixins;
+package de.mrcreativ3001.goodgravestones.mixins;
 
-import de.mrcreativ3001.simplegravestones.SimpleGravestones;
+import de.mrcreativ3001.goodgravestones.GoodGravestones;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -25,7 +25,7 @@ public abstract class LivingEntityMixin extends Entity {
         if (!(thisObj instanceof PlayerEntity player))
             return;
 
-        if (SimpleGravestones.spawnGrave(player))
+        if (GoodGravestones.spawnGrave(player))
             info.cancel();
     }
 }

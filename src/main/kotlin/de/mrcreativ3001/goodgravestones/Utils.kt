@@ -1,7 +1,7 @@
-package de.mrcreativ3001.simplegravestones.util
+package de.mrcreativ3001.goodgravestones.util
 
-import de.mrcreativ3001.simplegravestones.mixins.LivingEntityAccessor
-import de.mrcreativ3001.simplegravestones.mixins.PlayerEntityAccessor
+import de.mrcreativ3001.goodgravestones.mixins.LivingEntityAccessor
+import de.mrcreativ3001.goodgravestones.mixins.PlayerEntityAccessor
 import net.minecraft.block.entity.LockableContainerBlockEntity
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.player.PlayerEntity

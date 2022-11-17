@@ -1,9 +1,9 @@
-package de.mrcreativ3001.simplegravestones
-import de.mrcreativ3001.simplegravestones.command.BackCommand
-import de.mrcreativ3001.simplegravestones.config.SimpleGravestonesConfig
-import de.mrcreativ3001.simplegravestones.util.dropXp
-import de.mrcreativ3001.simplegravestones.util.insertItem
-import de.mrcreativ3001.simplegravestones.util.vanishCursedItems
+package de.mrcreativ3001.goodgravestones
+import de.mrcreativ3001.goodgravestones.command.BackCommand
+import de.mrcreativ3001.goodgravestones.config.GoodGravestonesConfig
+import de.mrcreativ3001.goodgravestones.util.dropXp
+import de.mrcreativ3001.goodgravestones.util.insertItem
+import de.mrcreativ3001.goodgravestones.util.vanishCursedItems
 import eu.midnightdust.lib.config.MidnightConfig
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback
@@ -20,11 +20,11 @@ import net.minecraft.world.World
 import java.lang.RuntimeException
 
 @Suppress("UNUSED")
-object SimpleGravestones: ModInitializer {
+object GoodGravestones: ModInitializer {
     const val MOD_ID = "simplegravestones"
 
     override fun onInitialize() {
-        MidnightConfig.init(MOD_ID, SimpleGravestonesConfig::class.java)
+        MidnightConfig.init(MOD_ID, GoodGravestonesConfig::class.java)
         CommandRegistrationCallback.EVENT.register { dispatcher, _, _ ->
             BackCommand.register(dispatcher)
         }

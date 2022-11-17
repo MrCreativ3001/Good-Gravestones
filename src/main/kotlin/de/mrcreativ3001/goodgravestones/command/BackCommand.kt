@@ -1,10 +1,10 @@
-package de.mrcreativ3001.simplegravestones.command
+package de.mrcreativ3001.goodgravestones.command
 
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.context.CommandContext
-import de.mrcreativ3001.simplegravestones.SimpleGravestones
-import de.mrcreativ3001.simplegravestones.config.SimpleGravestonesConfig
-import de.mrcreativ3001.simplegravestones.util.isSolid
+import de.mrcreativ3001.goodgravestones.GoodGravestones
+import de.mrcreativ3001.goodgravestones.config.GoodGravestonesConfig
+import de.mrcreativ3001.goodgravestones.util.isSolid
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.server.command.CommandManager.*
 import net.minecraft.server.command.ServerCommandSource
@@ -26,26 +26,26 @@ object BackCommand {
             return 0
         }
 
-        if(!SimpleGravestonesConfig.enableBackCommand) {
-            entity.sendMessage(Text.translatable("command.${SimpleGravestones.MOD_ID}.back.disabled"))
+        if(!GoodGravestonesConfig.enableBackCommand) {
+            entity.sendMessage(Text.translatable("command.${GoodGravestones.MOD_ID}.back.disabled"))
             return 0
         }
 
         val deathPos = entity.lastDeathPos.map(GlobalPos::getPos).orElse(null)
         if (deathPos == null) {
-            entity.sendMessage(Text.translatable("command.${SimpleGravestones.MOD_ID}.back.notfound.deathpos"))
+            entity.sendMessage(Text.translatable("command.${GoodGravestones.MOD_ID}.back.notfound.deathpos"))
             return 0
         }
 
         val teleportPos = findTeleportSpot(entity.world, deathPos)
 
         if (teleportPos == null) {
-            entity.sendMessage(Text.translatable("command.${SimpleGravestones.MOD_ID}.back.obstructed", deathPos.x, deathPos.y, deathPos.z))
+            entity.sendMessage(Text.translatable("command.${GoodGravestones.MOD_ID}.back.obstructed", deathPos.x, deathPos.y, deathPos.z))
             return 0
         }
 
         entity.teleport(teleportPos.x.toDouble()+0.5, teleportPos.y.toDouble(), teleportPos.z.toDouble()+0.5)
-        entity.sendMessage(Text.translatable("command.${SimpleGravestones.MOD_ID}.back.success"))
+        entity.sendMessage(Text.translatable("command.${GoodGravestones.MOD_ID}.back.success"))
 
         return 1
     }

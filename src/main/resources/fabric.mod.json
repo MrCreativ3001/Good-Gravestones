@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "simplegravestones",
+  "id": "goodgravestones",
   "version": "${version}",
-  "name": "Simple Gravestones",
+  "name": "Good Gravestones",
   "description": "This mod adds a gravestones after a death.",
   "authors": [
     "MrCreativ3001"
@@ -13,24 +13,24 @@
     "sources": "https://example.com/"
   },
   "license": "MIT License",
-  "icon": "assets/simplegravestones/logo.jpg",
+  "icon": "assets/goodgravestones/logo.jpg",
   "environment": "*",
   "entrypoints": {
     "main": [
       {
         "adapter": "kotlin",
-        "value": "de.mrcreativ3001.simplegravestones.SimpleGravestones"
+        "value": "de.mrcreativ3001.goodgravestones.SimpleGravestones"
       }
     ],
     "modmenu": [
       {
         "adapter": "kotlin",
-        "value": "de.mrcreativ3001.simplegravestones.config.SimpleGravestonesModMenuApi"
+        "value": "de.mrcreativ3001.goodgravestones.config.SimpleGravestonesModMenuApi"
       }
     ]
   },
   "mixins": [
-    "simplegravestones.mixins.json"
+    "goodgravestones.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${fabricloader}",
