@@ -21,7 +21,7 @@ import java.lang.RuntimeException
 
 @Suppress("UNUSED")
 object GoodGravestones: ModInitializer {
-    const val MOD_ID = "simplegravestones"
+    const val MOD_ID = "goodgravestones"
 
     override fun onInitialize() {
         MidnightConfig.init(MOD_ID, GoodGravestonesConfig::class.java)
