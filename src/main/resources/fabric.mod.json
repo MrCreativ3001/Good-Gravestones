@@ -19,13 +19,13 @@
     "main": [
       {
         "adapter": "kotlin",
-        "value": "de.mrcreativ3001.goodgravestones.SimpleGravestones"
+        "value": "de.mrcreativ3001.goodgravestones.GoodGravestones"
       }
     ],
     "modmenu": [
       {
         "adapter": "kotlin",
-        "value": "de.mrcreativ3001.goodgravestones.config.SimpleGravestonesModMenuApi"
+        "value": "de.mrcreativ3001.goodgravestones.config.GoodGravestonesModMenuApi"
       }
     ]
   },
