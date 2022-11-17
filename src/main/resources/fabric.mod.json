@@ -12,7 +12,7 @@
     "issues": "https://example.com/",
     "sources": "https://example.com/"
   },
-  "license": "The Unlicense",
+  "license": "MIT License",
   "icon": "assets/simplegravestones/logo.jpg",
   "environment": "*",
   "entrypoints": {
