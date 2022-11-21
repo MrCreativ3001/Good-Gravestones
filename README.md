@@ -2,6 +2,8 @@
 This mod adds gravestones which spawn after a players has died
 and adds a back command which teleports the player to their latest death.
 
+You can download this mod on [curseforge](https://www.curseforge.com/minecraft/mc-mods/good-gravestones).
+
 ## Basic Functionality
 Spawn a grave after a player has died.
 All items will be stored inside the grave.
