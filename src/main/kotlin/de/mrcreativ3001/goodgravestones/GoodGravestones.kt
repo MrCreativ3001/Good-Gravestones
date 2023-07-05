@@ -1,6 +1,5 @@
 package de.mrcreativ3001.goodgravestones
 import de.mrcreativ3001.goodgravestones.command.BackCommand
-import de.mrcreativ3001.goodgravestones.compat.TrinketItemCollector
 import de.mrcreativ3001.goodgravestones.config.GoodGravestonesConfig
 import de.mrcreativ3001.goodgravestones.util.dropXp
 import de.mrcreativ3001.goodgravestones.util.insertItem
@@ -8,7 +7,6 @@ import de.mrcreativ3001.goodgravestones.util.vanishCursedItems
 import eu.midnightdust.lib.config.MidnightConfig
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback
-import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.block.Blocks
 import net.minecraft.block.SignBlock
 import net.minecraft.block.entity.BarrelBlockEntity
@@ -37,9 +35,6 @@ object GoodGravestones: ModInitializer {
 
         // Register item collectors
         itemCollectors.add(VanillaItemCollector())
-        if (FabricLoader.getInstance().isModLoaded("trinkets")) {
-            itemCollectors.add(TrinketItemCollector())
-        }
     }
 
     /**
