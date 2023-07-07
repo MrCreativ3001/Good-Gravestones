@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = ServerPlayerEntity.class, priority = 500) // Low priority to make sure that this mixin is applied before the other mixins
 public class ServerPlayerEntityMixin {
 
+    @SuppressWarnings("all")
     @Inject(method = "onDeath", at = @At("HEAD"))
     public void onDeathHead(DamageSource source, CallbackInfo info) {
         // This method is called on death of the entity
@@ -29,13 +30,14 @@ public class ServerPlayerEntityMixin {
         GoodGravestones.spawnGrave(player);
     }
 
+    @SuppressWarnings("all")
     @Inject(method = "onDeath", at = @At("RETURN"))
     public void onDeathReturn(DamageSource source, CallbackInfo info) {
         // This method is called on death of the entity
         // Enable item drops again
 
         Object thisObj = this;
-        if (!(thisObj instanceof PlayerEntity player)) {
+        if (!(thisObj instanceof PlayerEntity)) {
             return;
         }
 
