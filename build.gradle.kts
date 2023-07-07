@@ -20,6 +20,17 @@ repositories {
     maven {
         url = uri("https://ladysnake.jfrog.io/artifactory/mods")
     }
+    // BackSlot
+    maven {
+        url = uri("https://api.modrinth.com/maven")
+    }
+    // Amecs Api (for BackSlot)
+    maven {
+        url = uri("https://maven.siphalor.de/")
+    }
+    maven {
+        url = uri("https://jitpack.io")
+    }
 }
 
 dependencies {
@@ -39,6 +50,12 @@ dependencies {
 
     // Trinkets: https://github.com/emilyploszaj/trinkets
     modImplementation("dev.emi:trinkets:${rootProject.extra["trinkets_version"]}")
+
+    // BackSlot: https://github.com/Globox1997/BackSlot
+    modImplementation("maven.modrinth:backslot:${rootProject.extra["backslot_version"]}")
+
+    // Amecs Api (for BackSlot): https://github.com/Siphalor/amecs-api
+    modImplementation("de.siphalor:amecsapi-${rootProject.extra["amecs_api_version"]}")
 }
 
 tasks {

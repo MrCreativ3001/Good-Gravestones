@@ -34,6 +34,7 @@ object GoodGravestones: ModInitializer {
         }
 
         // Register item collectors
+        itemCollectors.clear()
         itemCollectors.add(VanillaItemCollector())
     }
 
@@ -61,6 +62,8 @@ object GoodGravestones: ModInitializer {
         var barrel = placeBarrel(player.world, currentPos)
         while (collectedItems.isNotEmpty()) {
             val item = collectedItems.removeFirst()
+            if (item.isEmpty)
+                continue
             val rest = barrel.insertItem(item)
             if (!rest.isEmpty) {
                 currentPos = currentPos.up()

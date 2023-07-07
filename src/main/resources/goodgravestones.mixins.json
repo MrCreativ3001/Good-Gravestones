@@ -6,8 +6,10 @@
     "defaultRequire": 1
   },
   "mixins": [
-    "LivingEntityMixin",
+    "EntityMixin",
     "LivingEntityAccessor",
-    "PlayerEntityAccessor"
+    "LivingEntityMixin",
+    "PlayerEntityAccessor",
+    "ServerPlayerEntityMixin"
   ]
 }
