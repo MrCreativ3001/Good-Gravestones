@@ -53,7 +53,7 @@ object GoodGravestones: ModInitializer {
 
         player.vanishCursedItems()
 
-        val collectedItems = itemCollectors.flatMap { it.collectItems(player) }.toCollection(mutableListOf())
+        val collectedItems = itemCollectors.flatMap { it.collectItems(player) }.filter { !it.isEmpty }.toCollection(mutableListOf())
         if (collectedItems.isEmpty())
             return true
 
